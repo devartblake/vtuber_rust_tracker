@@ -1,0 +1,59 @@
+name: flutter_openseeface_plugin
+description: A Flutter plugin for face tracking using the openseeface-rs Rust library. Provides real-time face detection, landmark tracking, and pose estimation.
+version: 0.1.0
+homepage: https://github.com/devartblake/flutter_openseeface_plugin
+repository: https://github.com/devvartblake/flutter_openseeface_plugin
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.7
+  ffi: ^2.1.0
+  meta: ^1.9.1
+  path: ^1.8.3
+  collection: ^1.17.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_rust_bridge: ^2.0.0
+  ffigen: ^11.0.0
+  integration_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.flutter_openseeface_plugin
+        pluginClass: FlutterOpenSeeFacePlugin
+        dartPluginClass: FlutterOpenSeeFacePlugin
+      ios:
+        pluginClass: FlutterOpenSeeFacePlugin
+        dartPluginClass: FlutterOpenSeeFacePlugin
+      linux:
+        pluginClass: FlutterOpenSeeFacePlugin
+        dartPluginClass: FlutterOpenSeeFacePlugin
+      macos:
+        pluginClass: FlutterOpenSeeFacePlugin
+        dartPluginClass: FlutterOpenSeeFacePlugin
+      windows:
+        pluginClass: FlutterOpenSeeFacePlugin
+        dartPluginClass: FlutterOpenSeeFacePlugin
+
+# Configure flutter_rust_bridge code generation
+flutter_rust_bridge:
+  rust_input: rust/src/api/mod.rs
+  dart_output: lib/generated/
+  dart_format_line_length: 80
+  llvm_path:
+    - /usr/lib/llvm-15
+    - /opt/homebrew/opt/llvm
+    - C:\Program Files\LLVM
+  enable_lifetime: true
+  duplicate_c_output: true
