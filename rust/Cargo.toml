@@ -12,7 +12,7 @@ crate-type = ["cdylib", "staticlib"]
 
 [dependencies]
 # OpenSeeFace Rust implementation
-openseeface = { git = "https://github.com/ricky26/openseeface-rs", version = "0.1" }
+openseeface = { git = "https://github.com/ricky26/openseeface-rs" }
 
 # Flutter Rust Bridge
 flutter_rust_bridge = "2.0"
